@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>红包转盘游戏</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>🧧 红包转盘</h1>
+      <p class="sub">6 个奖励：10 / 20 / 50 / 100 / 200 / 0</p>
+
+      <section class="wheel-area">
+        <div class="pointer">▼</div>
+        <canvas id="wheel" width="560" height="560" aria-label="红包转盘"></canvas>
+        <button id="spinBtn" class="spin-btn">开始抽红包</button>
+      </section>
+
+      <section class="panel">
+        <div class="result-title">本次结果</div>
+        <div id="result" class="result">点击开始抽红包</div>
+        <div id="history" class="history"></div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

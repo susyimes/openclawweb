@@ -1,0 +1,124 @@
+:root {
+  --bg: #070b1a;
+  --card: #11172d;
+  --text: #f8fafc;
+  --sub: #94a3b8;
+  --accent: #22d3ee;
+  --accent-2: #a78bfa;
+  --gold: #fbbf24;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 20% 10%, #172554 0%, transparent 30%),
+    radial-gradient(circle at 80% 20%, #3b0764 0%, transparent 28%),
+    radial-gradient(circle at 50% 100%, #0f172a 0%, transparent 40%),
+    var(--bg);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.wrap {
+  width: min(980px, 100%);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 20px;
+}
+
+h1 { margin: 0; }
+.sub { color: var(--sub); margin: 8px 0 0; }
+
+.wheel-area,
+.panel {
+  background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+  border: 1px solid rgba(148,163,184,0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+.wheel-area {
+  position: relative;
+  padding: 20px;
+  display: grid;
+  place-items: center;
+}
+
+.pointer {
+  position: absolute;
+  top: 8px;
+  font-size: 28px;
+  color: var(--gold);
+  text-shadow: 0 0 10px rgba(251,191,36,0.9);
+  z-index: 3;
+}
+
+canvas {
+  width: min(560px, 92vw);
+  max-width: 100%;
+  aspect-ratio: 1/1;
+  filter: drop-shadow(0 0 26px rgba(34,211,238,0.35));
+}
+
+.spin-btn {
+  margin-top: 14px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+  color: #031525;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  box-shadow: 0 10px 24px rgba(34,211,238,0.35);
+}
+
+.spin-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.panel {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.result-title {
+  font-weight: 700;
+  color: var(--sub);
+}
+
+.result {
+  min-height: 68px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-radius: 14px;
+  border: 1px solid rgba(148,163,184,0.25);
+  font-size: 34px;
+  font-weight: 900;
+  background: rgba(2,6,23,0.45);
+}
+
+.history {
+  border-top: 1px dashed rgba(148,163,184,0.3);
+  padding-top: 14px;
+  color: var(--sub);
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 900px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+}
